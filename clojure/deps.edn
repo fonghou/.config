@@ -91,9 +91,7 @@
                  org.assertj/assertj-core     {:mvn/version "RELEASE"}
                  org.mockito/mockito-core     {:mvn/version "RELEASE"}
                  org.junit.jupiter/junit-jupiter           {:mvn/version "RELEASE"}
-                 org.junit.platform/junit-platform-console {:mvn/version "RELEASE"}
-                 com.clojure-goes-fast/clj-java-decompiler {:mvn/version "RELEASE"}
-                 com.clojure-goes-fast/clj-async-profiler  {:mvn/version "RELEASE"}}}
+                 org.junit.platform/junit-platform-console {:mvn/version "RELEASE"}}}
 
   :flow
   {:classpath-overrides {org.clojure/clojure nil}
@@ -131,7 +129,7 @@
                 com.github.gnl/playback       {:mvn/version "RELEASE"}
                 djblue/portal                 {:mvn/version "RELEASE"}
                 io.github.tonsky/clj-reload   {:mvn/version "RELEASE"}
-                org.clojure/tools.namespace   {:mvn/version "RELEASE"}
+                io.github.tonsky/clojure-plus {:mvn/version "RELEASE"}
                 org.clj-commons/pretty        {:mvn/version "RELEASE"}
                 vvvvalvalval/scope-capture    {:mvn/version "RELEASE"}}
    :jvm-opts   ["-Xmx2g" "-Djdk.attach.allowAttachSelf"
