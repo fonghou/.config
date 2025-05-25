@@ -8,10 +8,9 @@ setlocal iskeyword+=.
 nnoremap <buffer><silent><nowait> <localleader>a   :Repl :add *<C-r>=expand('%')<CR><CR>
 nnoremap <buffer><silent><nowait> <localleader>c   <Cmd>Repl :!clear<CR>
 nnoremap <buffer><silent><nowait> <localleader>d   :Repl :doc <C-r><C-w><CR>
-nnoremap <buffer><silent><nowait> <localleader>h   :Hoogle <C-r><C-w><CR>
-nnoremap <buffer><silent><nowait> <localleader>L   :Repl :load! *<C-r>=expand('%')<CR><CR>
-nnoremap <buffer><silent><nowait> <localleader>l   <Cmd>w <bar> Repl :reload<CR><CR>
-nnoremap <buffer><silent><nowait> <localleader>r   <Cmd>Repl :main<CR>
+nnoremap <buffer><silent><nowait> <localleader>l   :Repl :load! *<C-r>=expand('%')<CR><CR>
+nnoremap <buffer><silent><nowait> <localleader>m   <Cmd>Repl :main<CR>
+nnoremap <buffer><silent><nowait> <localleader>r   <Cmd>w <bar> Repl :reload<CR><CR>
 
 nnoremap <buffer><silent><nowait> <localleader>i   :Repl :info <C-r><C-w><CR>
 vnoremap <buffer><silent><nowait> <localleader>i y :Repl :instances <C-r>=@"<CR><CR>
@@ -21,6 +20,8 @@ vnoremap <buffer><silent><nowait> <localleader>k y :Repl :kind! <C-r>=@"<CR><CR>
 
 nnoremap <buffer><silent><nowait> <localleader>t   :Repl :type <C-r><C-w><CR>
 vnoremap <buffer><silent><nowait> <localleader>t   <Cmd>call GHC_type_at()<CR>
+
+nnoremap <buffer><silent><nowait> <localleader>/   :Hoogle <C-r><C-w><CR>
 
 inoremap <buffer><silent><C-l>       <Left><C-o>:HaskComplete <C-r><C-w><CR><Right>
 inoremap <buffer><silent><C-x><C-i>  <Left><C-o>:HaskComplete import <C-r><C-w><CR><Right>
