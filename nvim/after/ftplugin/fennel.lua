@@ -13,10 +13,6 @@ wk.add({
 
 -- <cword>
 vim.opt.iskeyword:append(".,:")
-
-local opts = { noremap = true, silent = true }
-vim.keymap.set("i", "<C-l>", "<Left><C-o>:ConjureEval ,complete <C-r><C-w><CR><Right>", opts)
-
 -- disable autopairs
 vim.cmd "inoremap <buffer> (  ("
 vim.cmd "inoremap <buffer> '  '"
@@ -28,3 +24,5 @@ command("FnlComplete", "ConjureEval ,complete <args>", { nargs = 1 })
 command("FnlDoc", "ConjureEval ,doc <args>", { nargs = 1 })
 command("FnlFind", "ConjureEval ,find <args>", { nargs = 1 })
 command("FnlReload", "ConjureEval ,reload <args>", { nargs = 1 })
+
+vim.cmd "inoremap <buffer><C-l> <Left><C-o>:FnlComplete <C-r><C-w><CR><Right>"

@@ -7,13 +7,13 @@ wk.add({
   { "<localleader>a", desc = "ghci add" },
   { "<localleader>c", desc = "ghci clear" },
   { "<localleader>d", desc = "ghci doc" },
-  { "<localleader>h", desc = "hoogle" },
   { "<localleader>i", desc = "ghci info" },
   { "<localleader>k", desc = "ghci kind" },
-  { "<localleader>L", desc = "ghci load" },
-  { "<localleader>l", desc = "ghci reload" },
-  { "<localleader>r", desc = "ghci run" },
+  { "<localleader>l", desc = "ghci load" },
+  { "<localleader>m", desc = "ghci main" },
+  { "<localleader>r", desc = "ghci reload" },
   { "<localleader>t", desc = "ghci type" },
+  { "<localleader>h", desc = "hoogle" },
 })
 wk.add({
   mode = "v",

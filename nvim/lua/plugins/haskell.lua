@@ -1,7 +1,7 @@
 local M = {
   {
     "mrcjkb/haskell-tools.nvim",
-    version = "^4",
+    version = "^6",
     lazy = false,
     cond = function()
       return vim.fn.filereadable("hls.json") ~= 0 and true

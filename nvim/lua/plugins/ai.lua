@@ -1,18 +1,5 @@
 return {
   {
-    "ggml-org/llama.vim",
-    init = function()
-      vim.g.llama_config = {
-        auto_fim = true,
-        show_info = 1,
-        keymap_trigger = "<C-l>",
-        keymap_accept_line = "<Tab>",
-        keymap_accept_full = "<S-Tab>",
-        keymap_accept_word = "",
-      }
-    end,
-  },
-  {
     "GeorgesAlkhouri/nvim-aider",
     cmd = "Aider",
     keys = {
@@ -30,7 +17,7 @@ return {
     opts = {
       args = {
         "--model",
-        "gemini",
+        "flash",
         "--no-analytics",
         "--no-auto-commits",
         "--yes-always",
