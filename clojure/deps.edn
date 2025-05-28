@@ -80,23 +80,20 @@
   {:extra-paths ["dev" "test"]
    :extra-deps  {com.fulcrologic/guardrails   {:mvn/version "RELEASE"}
                  com.taoensso/telemere        {:mvn/version "RELEASE"}
-                 criterium/criterium          {:mvn/version "RELEASE"}
+                 com.taoensso/tufte           {:mvn/version "RELEASE"}
+                 functionalbytes/redelay      {:mvn/version "RELEASE"}
                  metosin/malli                {:mvn/version "RELEASE"}
                  nubank/matcher-combinators   {:mvn/version "RELEASE"}
                  org.clojure/test.check       {:mvn/version "RELEASE"}
-                 org.slf4j/slf4j-nop          {:mvn/version "RELEASE"}
-                 ;; live reload java/junit!
-                 virgil/virgil                {:mvn/version "RELEASE"}
-                 org.assertj/assertj-core     {:mvn/version "RELEASE"}
-                 org.mockito/mockito-core     {:mvn/version "RELEASE"}
-                 org.junit.jupiter/junit-jupiter           {:mvn/version "RELEASE"}
-                 org.junit.platform/junit-platform-console {:mvn/version "RELEASE"}}}
+                 org.slf4j/slf4j-nop          {:mvn/version "RELEASE"}}}
 
   :flow
   {:classpath-overrides {org.clojure/clojure nil}
    :extra-deps {com.github.flow-storm/clojure        {:mvn/version "1.12.0-2"}
                 com.github.flow-storm/flow-storm-dbg {:mvn/version "RELEASE"}}
    :jvm-opts ["-Dflowstorm.startRecording=false"
+              "-Dflowstorm.styles=/tmp/flowstorm.css"
+              "-Dflowstorm.theme=dark"
               "-Dclojure.storm.instrumentEnable=true"
               "-Dclojure.storm.instrumentAutoPrefixes=true"]}
 
@@ -124,17 +121,20 @@
 
   :repl
   {:extra-deps {cider/cider-nrepl             {:mvn/version "RELEASE"}
+                nrepl/nrepl                   {:mvn/version "RELEASE"}
                 com.github.gnl/playback       {:mvn/version "RELEASE"}
                 djblue/portal                 {:mvn/version "RELEASE"}
-                nrepl/nrepl                   {:mvn/version "RELEASE"}
                 io.github.tonsky/clj-reload   {:mvn/version "RELEASE"}
                 io.github.tonsky/clojure-plus {:mvn/version "RELEASE"}
                 org.clj-commons/pretty        {:mvn/version "RELEASE"}
-                vvvvalvalval/scope-capture    {:mvn/version "RELEASE"}}
-   :jvm-opts   ["-Xmx2g" "-Djdk.attach.allowAttachSelf"
-                "-Dflowstorm.theme=dark"
-                "-Dflowstorm.styles=/tmp/flowstorm.css"]
+                vvvvalvalval/scope-capture    {:mvn/version "RELEASE"}
+                virgil/virgil                 {:mvn/version "RELEASE"}
+                com.clojure-goes-fast/clj-async-profiler  {:mvn/version "RELEASE"}
+                org.junit.jupiter/junit-jupiter           {:mvn/version "RELEASE"}
+                org.junit.platform/junit-platform-console {:mvn/version "RELEASE"}}
+   :jvm-opts   ["-Xmx2g" "-Djdk.attach.allowAttachSelf"]
    :main-opts  ["--main" "nrepl.cmdline"
+                "--port" "9999"
                 "--middleware" "[cider.nrepl/cider-middleware]"
                 "--interactive"]}
 
@@ -278,4 +278,10 @@
    :ns-default    clojure.tools.deps.graph
    :exec-fn       graph
    :exec-args     {:output "project-dependencies-graph.png"
-                   :size   true}}}}
+                   :size   true}}
+
+  :mcp
+  {:deps {org.slf4j/slf4j-nop {:mvn/version "2.0.16"}
+          com.bhauman/clojure-mcp {:local/root "/Users/duke/github/clojure-mcp"}}
+   :exec-fn clojure-mcp.main/start-mcp-server
+   :exec-args {:port 9999}}}}

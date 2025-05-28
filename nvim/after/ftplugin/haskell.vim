@@ -21,7 +21,7 @@ vnoremap <buffer><silent><nowait> <localleader>k y :Repl :kind! <C-r>=@"<CR><CR>
 nnoremap <buffer><silent><nowait> <localleader>t   :Repl :type <C-r><C-w><CR>
 vnoremap <buffer><silent><nowait> <localleader>t   <Cmd>call GHC_type_at()<CR>
 
-nnoremap <buffer><silent><nowait> <localleader>/   :Hoogle <C-r><C-w><CR>
+nnoremap <buffer><silent><nowait> <localleader>h   :Hoogle <C-r><C-w><CR>
 
 inoremap <buffer><silent><C-l>       <Left><C-o>:HaskComplete <C-r><C-w><CR><Right>
 inoremap <buffer><silent><C-x><C-i>  <Left><C-o>:HaskComplete import <C-r><C-w><CR><Right>

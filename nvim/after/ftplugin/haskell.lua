@@ -13,7 +13,7 @@ wk.add({
   { "<localleader>m", desc = "ghci main" },
   { "<localleader>r", desc = "ghci reload" },
   { "<localleader>t", desc = "ghci type" },
-  { "<localleader>/", desc = "hoogle search" },
+  { "<localleader>h", desc = "hoogle" },
 })
 wk.add({
   mode = "v",
